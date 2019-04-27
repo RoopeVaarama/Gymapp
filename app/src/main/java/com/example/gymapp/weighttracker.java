@@ -25,10 +25,10 @@ public class weighttracker extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graph);
+        setContentView(R.layout.activity_weighttracker);
 
         //search for the linechart
-        lineChart = (LineChart) findViewById(R.id.chart);
+        lineChart = findViewById(R.id.chart);
 
         lineChart.setDragEnabled(true);
         lineChart.setScaleEnabled(false);

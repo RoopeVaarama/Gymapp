@@ -6,20 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.github.mikephil.charting.charts.LineChart
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GYM GYM GYM"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
-    <Button
-        android:id="@+id/graphActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="255dp"
-        android:text="WeightTracker" />
+        android:id="@+id/chart">
+    </com.github.mikephil.charting.charts.LineChart>
 
 </RelativeLayout>
