@@ -35,11 +35,12 @@
         app:layout_constraintVertical_bias="0.471" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/weightTrackerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:onClick="openWeightTracker"
         android:text="Weight Tracker"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
