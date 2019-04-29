@@ -11,7 +11,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".legprogram"></activity>
         <activity android:name=".pullprogram" />
-        <activity android:name=".pushprogram" />
         <activity android:name=".gymprogram" />
         <activity android:name=".weighttracker" />
         <activity android:name=".MainActivity">
