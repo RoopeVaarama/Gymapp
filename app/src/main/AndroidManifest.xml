@@ -9,11 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".weighttracker"></activity>
-        <activity
-            android:name=".gymprogram"
-            android:label="@string/title_activity_gymprogram"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".gymprogram"></activity>
+        <activity android:name=".weighttracker" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
