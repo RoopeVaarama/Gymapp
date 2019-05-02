@@ -1,8 +1,15 @@
 package com.example.gymapp;
 
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -10,10 +17,13 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.listener.OnChartGestureListener;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class weighttracker extends AppCompatActivity{
@@ -21,63 +31,136 @@ public class weighttracker extends AppCompatActivity{
     private static final String TAG = "weightTracker";
 
     private LineChart lineChart;
+    private SqlHelper sqlHelper;
+    private SQLiteDatabase sqLiteDatabase;
+    private EditText setWeight;
+    private Button insertButton, showButton;
+    private SharedPreferences sharedPref;
+    private float xValue;
+
+    XAxis xAxis;
+
+    LineDataSet lineDataSet = new LineDataSet(null,null);
+    ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+    LineData lineData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weighttracker);
 
-        //search for the linechart
+        sharedPref = getSharedPreferences("Load", MODE_PRIVATE);
+        this.xValue = sharedPref.getFloat("xVALUE",0);
+
+        //search for the line chart, edit texts and buttons
         lineChart = findViewById(R.id.chart);
+        insertButton = findViewById(R.id.insertButton);
+        showButton = findViewById(R.id.showButton);
+        setWeight = findViewById(R.id.setWeight);
 
-        lineChart.setDragEnabled(true);
-        lineChart.setScaleEnabled(false);
-
-        ArrayList<Entry> weightData = new ArrayList<>();
-
-        //test values
-        weightData.add(new Entry(0,5f));
-        weightData.add(new Entry(1,15f));
-        weightData.add(new Entry(2,20f));
-        weightData.add(new Entry(3,17f));
-        weightData.add(new Entry(4,45f));
-        weightData.add(new Entry(5,66f));
-        weightData.add(new Entry(6,70f));
-
-        LineDataSet set1 = new LineDataSet(weightData, "Weight (KG)");
-
-        //set colors and fonts
-        set1.setFillAlpha(110);
-        set1.setColor(Color.RED);
-        set1.setCircleColor(Color.BLACK);
-        set1.setLineWidth(2f);
-        set1.setValueTextSize(12f);
+        sqlHelper = new SqlHelper(this);
+        sqLiteDatabase = sqlHelper.getWritableDatabase();
 
 
+        onInsertClick();
+        onShowClick();
 
-        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-        dataSets.add(set1);
+        //graph colors and fonts etc
+        lineDataSet.setLineWidth(4);
+        lineDataSet.setFillAlpha(110);
+        lineDataSet.setColor(Color.RED);
+        lineDataSet.setCircleColor(Color.BLACK);
+        lineDataSet.setValueTextSize(12f);
 
-        LineData data = new LineData(dataSets);
+        lineChart.animateY(2000); // chart animation
 
-        XAxis xAxis = lineChart.getXAxis();
+        xAxis = lineChart.getXAxis();
         xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
+    }
 
-        lineChart.setData(data);
+    @Override
+    protected void onPause() {
+        super.onPause();
 
-        //mLineChart.invalidate(); // refresh
-
-        /**
-         * useful stuff
-         *
-         * saveToGallery(String title): Saves the current chart state as an image to the gallery.
-         * Don't forget to add "WRITE_EXTERNAL_STORAGE" permission to your manifest.
-         *
-         * isEmpty(): Will return true if the charts data object is null, or if it contains no entries.
-         *
-         * clear(): Clears the chart of all data (by setting the data object to null). Calls invalidate() to refresh the chart.
-         * clearValues(): Clears the chart of all DataSet objects and thereby all Entries. Does not remove the provided x-values from the chart. Calls invalidate() to refresh the chart.
-         */
+        //save xValue
+        SharedPreferences.Editor prefEditor = sharedPref.edit();
+        prefEditor.putFloat("xVALUE",this.xValue);
+        prefEditor.apply();
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //get xValue
+        this.xValue = sharedPref.getFloat("xVALUE",0);
+    }
+
+    private void onInsertClick() {
+
+        insertButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //catch error if field is left empty
+                try {
+                    float yValue = Float.parseFloat(String.valueOf(setWeight.getText()));
+
+                    if (yValue < 0) {
+                        toastMessage(1);
+                    } else {
+                        //insert data to database, increment xValue and display message
+                        sqlHelper.insertData(xValue, yValue);
+                        xValue += 1;
+                        toastMessage(2);
+                    }
+
+                }catch (Exception e){
+                    toastMessage(3);
+                }
+            }
+        });
+    }
+
+    //toast messages
+    public void toastMessage(int num){
+        if(num == 1){
+            Toast.makeText(this,"Weight can't be negative.",Toast.LENGTH_SHORT).show();
+        }else if(num == 2){
+            Toast.makeText(this,"Value added to graph",Toast.LENGTH_SHORT).show();
+        }else if(num == 3){
+            Toast.makeText(this,"Field can't be empty.",Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private void onShowClick() {
+
+        showButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lineDataSet.setValues(getDataValues());
+                lineDataSet.setLabel("Weight");
+
+                dataSets.clear(); // clear old data
+                dataSets.add(lineDataSet); // new data
+                lineData = new LineData(dataSets);
+                lineChart.clear(); // clear old data
+                lineChart.setData(lineData); // new data
+                lineChart.invalidate();  //refresh
+            }
+        });
+    }
+
+    private ArrayList<Entry> getDataValues(){
+        ArrayList<Entry> dataValues = new ArrayList<>();
+        String[] columns = {"xValues", "yValues"};
+        Cursor cursor = sqLiteDatabase.query("myTable",columns,null,null,null,null,null);
+
+        for(int i = 0; i<cursor.getCount(); i++){
+            cursor.moveToNext();
+            dataValues.add(new Entry(cursor.getFloat(0),cursor.getFloat(1)));
+        }
+        return dataValues;
+    }
+
 }
