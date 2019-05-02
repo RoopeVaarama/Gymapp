@@ -12,7 +12,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -74,7 +76,23 @@ public class weighttracker extends AppCompatActivity{
 
         lineChart.animateY(2000); // chart animation
 
+        //background color, draw chartborders etc
+        lineChart.setBackgroundColor(Color.LTGRAY);
+        lineChart.setDrawGridBackground(true);
+        lineChart.setDrawBorders(true);
+        lineChart.setBorderColor(Color.BLACK);
+
+        //chart description fonts, colors, text
+        Description description = new Description();
+        description.setText("Weight data");
+        description.setTextColor(Color.RED);
+        description.setTextSize(15);
+        lineChart.setDescription(description);
+
+        lineChart.getAxisRight().setEnabled(false); // y axis numbers only on left side of the chart
+
         xAxis = lineChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM); // x axis numbers under the chart
         xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
     }
 
@@ -151,6 +169,7 @@ public class weighttracker extends AppCompatActivity{
         });
     }
 
+    //get data from database
     private ArrayList<Entry> getDataValues(){
         ArrayList<Entry> dataValues = new ArrayList<>();
         String[] columns = {"xValues", "yValues"};
