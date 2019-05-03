@@ -34,7 +34,7 @@ public class PushProgram extends AppCompatActivity {
 
     public void update(int page){
         pageheader.setText("Liike " + pagenumber);
-        info.setText(res.getInfo(page));
+        //info.setText(res.getInfo(page));
 
     }
 
