@@ -17,7 +17,7 @@ public class PushResourses {
     }
 
     public String getInfo(int page){
-        String tuloste = info.get(page);
+        String tuloste = info.get(page-1);
         return tuloste;
     }
 }

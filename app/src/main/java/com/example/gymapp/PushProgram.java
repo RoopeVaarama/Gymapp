@@ -37,6 +37,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
         image = findViewById(R.id.imageView);
         video = findViewById(R.id.videoView);
         info = findViewById(R.id.textView3);
+        res = new PushResourses();
 
        gestureDetector = new GestureDetector(this);
 
@@ -70,8 +71,8 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
 
     public void update(int page){
         pageheader.setText("Liike " + pagenumber);
-        //String tuloste = res.getInfo(page);
-        //info.setText(tuloste);
+        String tuloste = res.getInfo(page);
+        info.setText(tuloste);
     }
 
     @Override
@@ -153,7 +154,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
     private void onSwipeRight() {
         Toast.makeText(getApplicationContext(), "Right", Toast.LENGTH_LONG).show();
         if(pagenumber > 1 ){
-            pagenumber++;
+            pagenumber--;
             update(pagenumber);
         }else{
             Toast.makeText(getApplicationContext(), "First page", Toast.LENGTH_LONG).show();
