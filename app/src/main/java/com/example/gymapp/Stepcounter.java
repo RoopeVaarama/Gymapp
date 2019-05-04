@@ -70,7 +70,7 @@ public class Stepcounter extends AppCompatActivity implements SensorEventListene
     }
 
     public void onClickReset(View view){
-        Start();
+        startval = steps;
         Update();
     }
     public void Update(){
