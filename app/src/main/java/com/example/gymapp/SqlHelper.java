@@ -5,8 +5,11 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+<<<<<<< HEAD
 import androidx.annotation.Nullable;
 
+=======
+>>>>>>> origin/master
 public class SqlHelper extends SQLiteOpenHelper {
 
     //constructor
