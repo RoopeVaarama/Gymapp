@@ -19,7 +19,7 @@ public class PushResourses {
         this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets.\nYou can use barbell or dumbbells for this exercise.\nYou can do this exercise while standing or seated.");
 
         this.liike.add("French bench press");
-        this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets.\n You can use barbell or dumbbells for this exercise.");
+        this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets.\nYou can use barbell or dumbbells for this exercise.");
 
         this.liike.add("Tricep pushdown elbow behind back");
         this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets. Keep your elbows behind your beck trough the exercise.\nThen its more effective.");
