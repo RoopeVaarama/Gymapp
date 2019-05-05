@@ -32,11 +32,11 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_push_program);
 
-        switch1 = (Switch)findViewById(R.id.switch1);
-        pageheader = findViewById(R.id.textView2);
-        image = findViewById(R.id.imageView);
-        video = findViewById(R.id.videoView);
-        info = findViewById(R.id.textView3);
+        switch1 = (Switch)findViewById(R.id.pushswitch);
+        pageheader = findViewById(R.id.pushheader);
+        image = findViewById(R.id.pushimage);
+        video = findViewById(R.id.pushvideo);
+        info = findViewById(R.id.pushinfo);
         res = new PushResourses();
 
        gestureDetector = new GestureDetector(this);

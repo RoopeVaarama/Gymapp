@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PushProgram">
+    tools:context=".pullprogram">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/pullheader"
         android:layout_width="137dp"
         android:layout_height="50dp"
         android:text="TextView"
@@ -21,7 +21,7 @@
         tools:text="Move" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/pullimage"
         android:layout_width="358dp"
         android:layout_height="316dp"
         android:layout_marginStart="8dp"
@@ -38,7 +38,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <VideoView
-        android:id="@+id/videoView"
+        android:id="@+id/pullvideo"
         android:layout_width="358dp"
         android:layout_height="316dp"
         android:layout_marginStart="8dp"
@@ -54,31 +54,32 @@
         app:layout_constraintVertical_bias="0.19999999" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/pullswitch"
         android:layout_width="112dp"
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Video"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/videoView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/pullinfo"
         android:layout_width="362dp"
         android:layout_height="247dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/videoView"
-        app:layout_constraintStart_toStartOf="@+id/videoView"
-        app:layout_constraintTop_toBottomOf="@+id/videoView"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintEnd_toEndOf="@+id/pullswitch"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pullswitch" />
 
 </android.support.constraint.ConstraintLayout>

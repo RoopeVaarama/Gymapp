@@ -32,11 +32,11 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_legprogram);
 
-        switch1 = (Switch)findViewById(R.id.switch1);
-        pageheader = findViewById(R.id.textView2);
-        image = findViewById(R.id.imageView);
-        video = findViewById(R.id.videoView);
-        info = findViewById(R.id.textView3);
+        switch1 = (Switch)findViewById(R.id.legswitch);
+        pageheader = findViewById(R.id.legheader);
+        image = findViewById(R.id.legimage);
+        video = findViewById(R.id.legvideo);
+        info = findViewById(R.id.leginfo);
         res = new LegResourses();
 
         gestureDetector = new GestureDetector(this);

@@ -32,11 +32,11 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pullprogram);
 
-        switch1 = (Switch)findViewById(R.id.switch1);
-        pageheader = findViewById(R.id.textView2);
-        image = findViewById(R.id.imageView);
-        video = findViewById(R.id.videoView);
-        info = findViewById(R.id.textView3);
+        switch1 = (Switch)findViewById(R.id.pullswitch);
+        pageheader = findViewById(R.id.pullheader);
+        image = findViewById(R.id.pullimage);
+        video = findViewById(R.id.pullvideo);
+        info = findViewById(R.id.pullinfo);
         res = new PullResourses();
 
         gestureDetector = new GestureDetector(this);
