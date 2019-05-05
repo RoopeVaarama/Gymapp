@@ -12,22 +12,22 @@ public class LegResourses {
         this.info.add("Skip");
 
         this.liike.add("Squat");
-        this.info.add("Do 3 sets of 10 reps.\n Rest 1-3 minutes between sets.");
+        this.info.add("Do 3 sets of 10 reps.\nRest 1-3 minutes between sets.");
 
         this.liike.add("Deadlift");
-        this.info.add("Do 3 sets of 10 reps.\n Rest 1-3 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps.\nRest 1-3 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
         this.liike.add("Lunges");
-        this.info.add("Do 3 sets of 10 reps.\n Rest 1-2 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
         this.liike.add("Stiff-legged deadlift");
-        this.info.add("Do 3 sets of 10 reps.\n Rest 1-2 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
         this.liike.add("Hip thrust");
-        this.info.add("Do 3 sets of 10 reps.\n Rest 1-2 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
         this.liike.add("Calf raises");
-        this.info.add("Do 3 sets of 10 reps.\n Rest 1-2 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
     }
 
