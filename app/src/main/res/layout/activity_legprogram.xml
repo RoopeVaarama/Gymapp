@@ -73,8 +73,8 @@
 
     <TextView
         android:id="@+id/leginfo"
-        android:layout_width="362dp"
-        android:layout_height="247dp"
+        android:layout_width="369dp"
+        android:layout_height="227dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         android:text="TextView"

@@ -24,6 +24,17 @@ public class SqlHelper extends SQLiteOpenHelper {
 
     }
 
+    //delete table and call oncreate to create new table
+    public void clearDB(SQLiteDatabase db){
+        db.execSQL("DROP TABLE IF EXISTS myTable");
+        onCreate(db);
+    }
+
+    //delete last row
+    public void clearLast(SQLiteDatabase db){
+        db.execSQL("delete from myTable where xValues = ( select max(xValues) from myTable );");
+    }
+
     //insert data into DB
     public Boolean insertData(float valueX, float valueY){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();

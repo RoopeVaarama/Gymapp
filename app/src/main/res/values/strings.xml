@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Gymapp</string>
     <string name="title_activity_gymprogram">gymprogram</string>
+    <string name="refresh">REFRESH</string>
+    <string name="insert">Insert</string>
+    <string name="insert_weight">insert weight</string>
 </resources>

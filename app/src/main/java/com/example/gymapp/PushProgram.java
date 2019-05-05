@@ -17,6 +17,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
     public static final int SWIPE_TRESHOLD = 100;
     public static final int SWIPE_THRESHOLD = SWIPE_TRESHOLD;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
+    public static final int pagelimit = 8;
     private int pagenumber = 1;
     ImageView image;
     VideoView video;
@@ -144,7 +145,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
 
     private void onSwipeLeft() {
         Toast.makeText(getApplicationContext(), "Left", Toast.LENGTH_LONG).show();
-        if(pagenumber < 4){
+        if(pagenumber < pagelimit){
             pagenumber++;
             update(pagenumber);
         }else{
