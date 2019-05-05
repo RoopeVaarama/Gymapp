@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class PushResourses {
 
     ArrayList<String> info = new ArrayList<String>();
+    ArrayList<String> liike = new ArrayList<String>();
 
     public PushResourses() {
 
@@ -14,10 +15,21 @@ public class PushResourses {
         this.info.add("Informaatio 4. kolmannet");
         this.info.add("Informaatio 5. kolmannet");
 
+        this.liike.add("");
+        this.liike.add("");
+        this.liike.add("");
+        this.liike.add("");
+        this.liike.add("");
+
     }
 
     public String getInfo(int page){
         String tuloste = info.get(page-1);
+        return tuloste;
+    }
+
+    public String getLiike(int page){
+        String tuloste = liike.get(page-1);
         return tuloste;
     }
 }

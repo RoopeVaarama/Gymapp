@@ -70,7 +70,8 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
     }
 
     public void update(int page){
-        pageheader.setText("Liike " + pagenumber);
+        String nimituloste = res.getLiike(page);
+        pageheader.setText("Liike " + pagenumber + ": " + nimituloste);
         String tuloste = res.getInfo(page);
         info.setText(tuloste);
     }

@@ -39,7 +39,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
         info = findViewById(R.id.pushinfo);
         res = new PushResourses();
 
-       gestureDetector = new GestureDetector(this);
+        gestureDetector = new GestureDetector(this);
 
         update(pagenumber);
 
@@ -70,7 +70,8 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
     }
 
     public void update(int page){
-        pageheader.setText("Liike " + pagenumber);
+        String nimituloste = res.getLiike(page);
+        pageheader.setText("Liike " + pagenumber + ": " + nimituloste);
         String tuloste = res.getInfo(page);
         info.setText(tuloste);
     }
