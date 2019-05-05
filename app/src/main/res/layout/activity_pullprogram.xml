@@ -8,16 +8,16 @@
 
     <TextView
         android:id="@+id/pullheader"
-        android:layout_width="137dp"
-        android:layout_height="50dp"
+        android:layout_width="357dp"
+        android:layout_height="60dp"
         android:text="TextView"
-        android:textSize="40dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998"
+        app:layout_constraintVertical_bias="0.023"
         tools:text="Move" />
 
     <ImageView
