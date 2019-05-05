@@ -27,7 +27,6 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
     PushResourses res;
     private GestureDetector gestureDetector;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +42,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
         gestureDetector = new GestureDetector(this);
 
         update(pagenumber);
+        imageShow(image);
 
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -72,10 +72,40 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
 
     public void update(int page){
         String nimituloste = res.getLiike(page);
-        pageheader.setText("Liike " + pagenumber + ": " + nimituloste);
+        pageheader.setText("Move " + pagenumber + ": " + nimituloste);
         String tuloste = res.getInfo(page);
         info.setText(tuloste);
+        //updatePicture(page);
     }
+
+    /*private void updatePicture(int page) {
+        switch (page){
+            case 1:
+                image.setImageResource(R.drawable.);
+                break;
+            case 2:
+                image.setImageResource(R.drawable.);
+                break;
+            case 3:
+                image.setImageResource(R.drawable.);
+                break;
+            case 4:
+                image.setImageResource(R.drawable.);
+                break;
+            case 5:
+                image.setImageResource(R.drawable.);
+                break;
+            case 6:
+                image.setImageResource(R.drawable.);
+                break;
+            case 7:
+                image.setImageResource(R.drawable.);
+                break;
+            case 8:
+                image.setImageResource(R.drawable.);
+                break;
+        }
+    }*/
 
     @Override
     public boolean onDown(MotionEvent e) {
