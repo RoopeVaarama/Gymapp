@@ -13,6 +13,9 @@ public class PushResourses {
         this.info.add("Informaatio 3. kolmannet");
         this.info.add("Informaatio 4. kolmannet");
         this.info.add("Informaatio 5. kolmannet");
+        this.info.add("Informaatio 5. kolmannet");
+        this.info.add("Informaatio 5. kolmannet");
+        this.info.add("Informaatio 5. kolmannet");
 
     }
 

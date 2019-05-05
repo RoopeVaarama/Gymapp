@@ -17,6 +17,8 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
     public static final int SWIPE_TRESHOLD = 100;
     public static final int SWIPE_THRESHOLD = SWIPE_TRESHOLD;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
+    public static final int pagemaxlimit = 6;
+    public static final int pageminlimit = 0;
     private int pagenumber = 1;
     ImageView image;
     VideoView video;
@@ -143,7 +145,7 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
 
     private void onSwipeLeft() {
         Toast.makeText(getApplicationContext(), "Left", Toast.LENGTH_LONG).show();
-        if(pagenumber < 4){
+        if(pagenumber < pagemaxlimit){
             pagenumber++;
             update(pagenumber);
         }else{
@@ -153,7 +155,7 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
 
     private void onSwipeRight() {
         Toast.makeText(getApplicationContext(), "Right", Toast.LENGTH_LONG).show();
-        if(pagenumber > 1 ){
+        if(pagenumber > pageminlimit){
             pagenumber--;
             update(pagenumber);
         }else{
