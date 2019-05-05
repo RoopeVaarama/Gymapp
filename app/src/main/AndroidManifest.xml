@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PushProgram"></activity>
-        <activity android:name=".legprogram"></activity>
+        <activity android:name=".Stepcounter"></activity>
+        <activity android:name=".PushProgram" />
+        <activity android:name=".legprogram" />
         <activity android:name=".pullprogram" />
         <activity android:name=".gymprogram" />
         <activity android:name=".weighttracker" />

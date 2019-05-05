@@ -17,6 +17,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
     public static final int SWIPE_TRESHOLD = 100;
     public static final int SWIPE_THRESHOLD = SWIPE_TRESHOLD;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
+    public static final int pagelimit = 8;
     private int pagenumber = 1;
     ImageView image;
     VideoView video;
@@ -32,11 +33,12 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_push_program);
 
-        switch1 = (Switch)findViewById(R.id.switch1);
-        pageheader = findViewById(R.id.textView2);
-        image = findViewById(R.id.imageView);
-        video = findViewById(R.id.videoView);
-        info = findViewById(R.id.textView3);
+        switch1 = (Switch)findViewById(R.id.pushswitch);
+        pageheader = findViewById(R.id.pushheader);
+        image = findViewById(R.id.pushimage);
+        video = findViewById(R.id.pushvideo);
+        info = findViewById(R.id.pushinfo);
+        res = new PushResourses();
 
        gestureDetector = new GestureDetector(this);
 
@@ -70,8 +72,8 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
 
     public void update(int page){
         pageheader.setText("Liike " + pagenumber);
-        //String tuloste = res.getInfo(page);
-        //info.setText(tuloste);
+        String tuloste = res.getInfo(page);
+        info.setText(tuloste);
     }
 
     @Override
@@ -142,7 +144,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
 
     private void onSwipeLeft() {
         Toast.makeText(getApplicationContext(), "Left", Toast.LENGTH_LONG).show();
-        if(pagenumber < 4){
+        if(pagenumber < pagelimit){
             pagenumber++;
             update(pagenumber);
         }else{
@@ -153,7 +155,7 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
     private void onSwipeRight() {
         Toast.makeText(getApplicationContext(), "Right", Toast.LENGTH_LONG).show();
         if(pagenumber > 1 ){
-            pagenumber++;
+            pagenumber--;
             update(pagenumber);
         }else{
             Toast.makeText(getApplicationContext(), "First page", Toast.LENGTH_LONG).show();
