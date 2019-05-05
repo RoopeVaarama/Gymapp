@@ -78,6 +78,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         android:text="TextView"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/legswitch"
         app:layout_constraintHorizontal_bias="0.0"

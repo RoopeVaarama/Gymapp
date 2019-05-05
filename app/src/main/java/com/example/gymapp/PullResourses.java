@@ -13,22 +13,22 @@ public class PullResourses {
                 "When 5x5 pull ups or chin ups feels easy add extra weight.");
 
         this.liike.add("Bent over row");
-        this.info.add("Do 3 sets of 10 reps. \n Rest 1-2 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps. \nRest 1-2 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
         this.liike.add("Lat pulldown");
-        this.info.add("Do 3 sets of 10 reps. \n Rest 1-2 minutes between sets.");
+        this.info.add("Do 3 sets of 10 reps. \nRest 1-2 minutes between sets.");
 
         this.liike.add("Shrugs");
-        this.info.add("Do 3 sets of 10 reps. \n Rest 1-2 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps. \nRest 1-2 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
         this.liike.add("Bicep curl (narrow grip)");
-        this.info.add("Do 3 sets of 10 reps. \n Rest 1-2 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps. \nRest 1-2 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
         this.liike.add("Bicep curl (wide grip)");
-        this.info.add("Do 3 sets of 10 reps. \n Rest 1-2 minutes between sets.\n You can do this exercise with barbell or dumbbells.");
+        this.info.add("Do 3 sets of 10 reps. \nRest 1-2 minutes between sets.\nYou can do this exercise with barbell or dumbbells.");
 
         this.liike.add("Hammer curl");
-        this.info.add("Do 3 sets of 10 reps.\n Rest 1-2 minutes between sets.");
+        this.info.add("Do 3 sets of 10 reps.\nRest 1-2 minutes between sets.");
     }
 
     public String getInfo(int page){

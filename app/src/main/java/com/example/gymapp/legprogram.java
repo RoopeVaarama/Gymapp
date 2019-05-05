@@ -17,7 +17,7 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
     public static final int SWIPE_TRESHOLD = 100;
     public static final int SWIPE_THRESHOLD = SWIPE_TRESHOLD;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
-    public static final int pagelimit = 7;
+    public static final int pagelimit = 6;
     private int pagenumber = 1;
     ImageView image;
     VideoView video;
