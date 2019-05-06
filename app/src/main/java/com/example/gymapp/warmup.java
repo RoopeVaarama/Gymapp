@@ -15,6 +15,7 @@ public class warmup extends AppCompatActivity {
         setContentView(R.layout.activity_warmup);
 
         warmupinfo = findViewById(R.id.infoView);
-        warmupinfo.setText("Muista lämmitellä");
+        warmupinfo.setText("For warmup always remember to atleast stretch the area of muscles you are using for training.\n" +
+                "It's recommended to walk atleast 500-1000 steps. Easiest way to track the steps is using the apps step counter.");
     }
 }
