@@ -48,7 +48,6 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
 
         update(pagenumber);
         imageShow(image);
-        image.setImageResource(R.drawable.giphy);
 
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -80,7 +79,7 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
         String nimituloste = res.getLiike(page);
         pageheader.setText("Move " + pagenumber + ": " + nimituloste);
         String tuloste = res.getInfo(page);
-        info.setText(tuloste);//updateVideo(page);
+        info.setText(tuloste);
         //updateVideo(page);
         updatePicture(page);
     }
@@ -158,7 +157,7 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
     private void updatePicture(int page) {
         switch (page){
             case 0:
-                image.setImageResource(R.drawable.leg1);
+                image.setImageResource(R.drawable.pepe);
                 break;
             case 1:
                 image.setImageResource(R.drawable.leg1);
