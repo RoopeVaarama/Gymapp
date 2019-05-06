@@ -16,6 +16,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main { res.srcDirs = ['src/main/res', 'src/main/res/video', 'src/main/res/video2'] }
+    }
 }
 
 repositories {

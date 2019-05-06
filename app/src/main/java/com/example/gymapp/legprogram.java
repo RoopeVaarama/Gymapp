@@ -1,5 +1,6 @@
 package com.example.gymapp;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -7,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +28,7 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
     Switch switch1;
     LegResourses res;
     private GestureDetector gestureDetector;
+    MediaController mediaC;
 
 
     @Override
@@ -39,10 +42,13 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
         video = findViewById(R.id.legvideo);
         info = findViewById(R.id.leginfo);
         res = new LegResourses();
+        mediaC = new MediaController(this);
 
         gestureDetector = new GestureDetector(this);
 
         update(pagenumber);
+        imageShow(image);
+        image.setImageResource(R.drawable.giphy);
 
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -74,38 +80,106 @@ public class legprogram extends AppCompatActivity implements GestureDetector.OnG
         String nimituloste = res.getLiike(page);
         pageheader.setText("Move " + pagenumber + ": " + nimituloste);
         String tuloste = res.getInfo(page);
-        info.setText(tuloste);
-        //updatePicture(page);
+        info.setText(tuloste);//updateVideo(page);
+        //updateVideo(page);
+        updatePicture(page);
     }
-    /*private void updatePicture(int page) {
+
+    /*private void updateVideo(int page) {
+            String videopath;
         switch (page){
             case 1:
-                image.setImageResource(R.drawable.);
+                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                Uri uri1 = Uri.parse(videopath);
+                video.setVideoURI(uri1);
+                video.setMediaController(mediaC);
+                mediaC.setAnchorView(video);
+                video.start();
                 break;
             case 2:
-                image.setImageResource(R.drawable.);
+                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                Uri uri2 = Uri.parse(videopath);
+                video.setVideoURI(uri2);
+                video.setMediaController(mediaC);
+                mediaC.setAnchorView(video);
+                video.start();
                 break;
             case 3:
-                image.setImageResource(R.drawable.);
+                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                Uri uri3 = Uri.parse(videopath);
+                video.setVideoURI(uri3);
+                video.setMediaController(mediaC);
+                mediaC.setAnchorView(video);
+                video.start();
                 break;
             case 4:
-                image.setImageResource(R.drawable.);
+                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                Uri uri4 = Uri.parse(videopath);
+                video.setVideoURI(uri4);
+                video.setMediaController(mediaC);
+                mediaC.setAnchorView(video);
+                video.start();
                 break;
             case 5:
-                image.setImageResource(R.drawable.);
+                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                Uri uri5 = Uri.parse(videopath);
+                video.setVideoURI(uri5);
+                video.setMediaController(mediaC);
+                mediaC.setAnchorView(video);
+                video.start();
                 break;
             case 6:
-                image.setImageResource(R.drawable.);
+                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                Uri uri6 = Uri.parse(videopath);
+                video.setVideoURI(uri6);
+                video.setMediaController(mediaC);
+                mediaC.setAnchorView(video);
+                video.start();
                 break;
             case 7:
-                image.setImageResource(R.drawable.);
+                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                Uri uri7 = Uri.parse(videopath);
+                video.setVideoURI(uri7);
+                video.setMediaController(mediaC);
+                mediaC.setAnchorView(video);
+                video.start();
                 break;
             case 8:
-                image.setImageResource(R.drawable.);
+                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                Uri uri8 = Uri.parse(videopath);
+                video.setVideoURI(uri8);
+                video.setMediaController(mediaC);
+                mediaC.setAnchorView(video);
+                video.start();
                 break;
 
         }
     }*/
+    private void updatePicture(int page) {
+        switch (page){
+            case 0:
+                image.setImageResource(R.drawable.leg1);
+                break;
+            case 1:
+                image.setImageResource(R.drawable.leg1);
+                break;
+            case 2:
+                image.setImageResource(R.drawable.leg2);
+                break;
+            case 3:
+                image.setImageResource(R.drawable.leg3);
+                break;
+            case 4:
+                image.setImageResource(R.drawable.leg4);
+                break;
+            case 5:
+                image.setImageResource(R.drawable.leg5);
+                break;
+            case 6:
+                image.setImageResource(R.drawable.leg6);
+                break;
+        }
+    }
 
     @Override
     public boolean onDown(MotionEvent e) {
