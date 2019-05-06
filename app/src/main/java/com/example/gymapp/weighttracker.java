@@ -77,11 +77,15 @@ public class weighttracker extends AppCompatActivity implements PopupMenu.OnMenu
 
         lineChart.animateY(2000); // chart animation
 
-        //background color, draw chartborders etc
+        //background color, draw chart borders etc
         lineChart.setBackgroundColor(Color.LTGRAY);
         lineChart.setDrawGridBackground(true);
         lineChart.setDrawBorders(true);
         lineChart.setBorderColor(Color.BLACK);
+
+        //set no data text and color
+        lineChart.setNoDataText("Press refresh to show graph data");
+        lineChart.setNoDataTextColor(Color.BLACK);
 
         //chart description fonts, colors, text
         Description description = new Description();
@@ -93,7 +97,7 @@ public class weighttracker extends AppCompatActivity implements PopupMenu.OnMenu
         lineChart.getAxisRight().setEnabled(false); // y axis numbers only on left side of the chart
 
         xAxis = lineChart.getXAxis();
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM); // x axis numbers under the chart
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM); // x axis values under the chart
         xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
     }
 
