@@ -80,22 +80,22 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
         pageheader.setText("Move " + pagenumber + ": " + nimituloste);
         String tuloste = res.getInfo(page);
         info.setText(tuloste);
-        //updateVideo(page);
+        updateVideo(page);
         updatePicture(page);
     }
 
-    /*private void updateVideo(int page) {
+    private void updateVideo(int page) {
         String videopath;
         switch (page){
             case 1:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri1 = Uri.parse(videopath);
                 video.setVideoURI(uri1);
                 video.setMediaController(mediaC);
                 mediaC.setAnchorView(video);
                 video.start();
                 break;
-            case 2:
+            /*case 2:
                 videopath = "android.resource://com.example.gymapp/"+R.drawable.;
                 Uri uri2 = Uri.parse(videopath);
                 video.setVideoURI(uri2);
@@ -150,10 +150,10 @@ public class PushProgram extends AppCompatActivity implements GestureDetector.On
                 video.setMediaController(mediaC);
                 mediaC.setAnchorView(video);
                 video.start();
-                break;
+                break;*/
 
         }
-    }*/
+    }
 
     private void updatePicture(int page) {
         switch (page){
