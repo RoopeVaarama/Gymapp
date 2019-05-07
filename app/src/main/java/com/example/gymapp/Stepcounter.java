@@ -127,7 +127,7 @@ public class Stepcounter extends AppCompatActivity implements SensorEventListene
             //create NotificationChannel object and set notification importance
             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "Notifications", NotificationManager.IMPORTANCE_DEFAULT);
 
-            notificationChannel.setDescription("include notifications");
+            notificationChannel.setDescription("notification description");
 
             NotificationManager notiManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             notiManager.createNotificationChannel(notificationChannel);

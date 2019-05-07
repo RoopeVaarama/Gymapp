@@ -217,6 +217,7 @@ public class weighttracker extends AppCompatActivity implements PopupMenu.OnMenu
         }
     }
 
+    // get data values and return arraylist
     private ArrayList<Entry> getDataValues(){
         ArrayList<Entry> dataValues = new ArrayList<>();
         String[] columns = {"xValues", "yValues"};
