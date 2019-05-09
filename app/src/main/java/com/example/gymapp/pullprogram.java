@@ -80,15 +80,15 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
         pageheader.setText("Move " + pagenumber + ": " + nimituloste);
         String tuloste = res.getInfo(page);
         info.setText(tuloste);
-        //updateVideo(page);
+        updateVideo(page);
         updatePicture(page);
     }
 
-    /*private void updateVideo(int page) {
+    private void updateVideo(int page) {
         String videopath;
         switch (page){
             case 1:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri1 = Uri.parse(videopath);
                 video.setVideoURI(uri1);
                 video.setMediaController(mediaC);
@@ -96,7 +96,7 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
                 video.start();
                 break;
             case 2:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri2 = Uri.parse(videopath);
                 video.setVideoURI(uri2);
                 video.setMediaController(mediaC);
@@ -104,7 +104,7 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
                 video.start();
                 break;
             case 3:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri3 = Uri.parse(videopath);
                 video.setVideoURI(uri3);
                 video.setMediaController(mediaC);
@@ -112,7 +112,7 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
                 video.start();
                 break;
             case 4:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri4 = Uri.parse(videopath);
                 video.setVideoURI(uri4);
                 video.setMediaController(mediaC);
@@ -120,7 +120,7 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
                 video.start();
                 break;
             case 5:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri5 = Uri.parse(videopath);
                 video.setVideoURI(uri5);
                 video.setMediaController(mediaC);
@@ -128,7 +128,7 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
                 video.start();
                 break;
             case 6:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri6 = Uri.parse(videopath);
                 video.setVideoURI(uri6);
                 video.setMediaController(mediaC);
@@ -136,7 +136,7 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
                 video.start();
                 break;
             case 7:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri7 = Uri.parse(videopath);
                 video.setVideoURI(uri7);
                 video.setMediaController(mediaC);
@@ -144,7 +144,7 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
                 video.start();
                 break;
             case 8:
-                videopath = "android.resource://com.example.gymapp/"+R.drawable.;
+                videopath = "android.resource://com.example.gymapp/"+R.raw.testivideo;
                 Uri uri8 = Uri.parse(videopath);
                 video.setVideoURI(uri8);
                 video.setMediaController(mediaC);
@@ -153,7 +153,7 @@ public class pullprogram extends AppCompatActivity implements GestureDetector.On
                 break;
 
         }
-    }*/
+    }
     private void updatePicture(int page) {
         switch (page){
             case 1:
