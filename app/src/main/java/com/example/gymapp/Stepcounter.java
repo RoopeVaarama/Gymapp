@@ -109,7 +109,7 @@ public class Stepcounter extends AppCompatActivity implements SensorEventListene
 
         //new object and set icon, title, text and priority for notification
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
-        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setSmallIcon(R.mipmap.gym_app_icon);
         builder.setContentTitle("Step counter");
         builder.setContentText("You moved " + this.steps + " steps!");
         builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);

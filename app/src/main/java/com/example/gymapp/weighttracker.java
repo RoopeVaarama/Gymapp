@@ -186,14 +186,6 @@ public class weighttracker extends AppCompatActivity implements PopupMenu.OnMenu
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
         switch(menuItem.getItemId()){
-            case R.id.setGoal:
-                Toast.makeText(this, "1",Toast.LENGTH_SHORT).show();
-                return true;
-
-            case R.id.clearGoal:
-                Toast.makeText(this, "2",Toast.LENGTH_SHORT).show();
-                sqlHelper.clearLast(sqLiteDatabase);
-                return true;
 
             case R.id.clearLast:
                 //clear last entry from data base and decrement xValue
